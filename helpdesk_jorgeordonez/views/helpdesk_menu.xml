@@ -1,12 +1,20 @@
 <?xml version="1.0"?>
 <odoo>
+    <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new ticket
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="helpdesk_menu_root" name="Helpdesk" sequence='10'/>
+    <menuitem id="helpdesk_menu_submenu" name="Helpdesk" sequence='10' parent='helpdesk_menu_root'/>
+    <menuitem id="helpdesk_menu_tickets" name="Tickets" sequence='10' parent="helpdesk_menu_submenu" action="helpdesk_ticket_action"/>
+
 </odoo>
-    <!-- Library App Menu
-    <menuitem id="menu_library" name="Library"/>
-
-    Action to open the Book List
-    <act_window id="action_library_book" name="Library Books" res_model="library.book" view_mode="tree,form"/>
-
-    Menu item to open the Book list
-    <menuitem id="menu_library_book" name="Books" parent="menu_library" action="action_library_book"/> -->
-
