@@ -2,10 +2,10 @@
     'name': "Helpdesk_JorgeOrdonez",
 
     'summary': """
-        Jorge's Helpdesk""",
+        Se cambia o no se cambia""",
 
     'description': """
-        Helpdesk
+        Helpdesk asfdasd fasdf asd fasdf sad fd
     """,
 
     'author': "Jorge Ordóñez Vázquez",
