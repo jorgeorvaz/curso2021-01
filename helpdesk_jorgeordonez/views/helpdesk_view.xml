@@ -1,5 +1,14 @@
 <?xml version="1.0"?>
 <odoo>
+<!-- 
+Añadir en el header los siguiente botones:
+
+Asignar, cambia estado a asignado y pone a true el campo asignado, visible sólo con estado = nuevo
+En proceso, visible sólo con estado = asignado
+Pendiente, visible sólo con estado = en proceso o asignado
+Finalizar, visible en cualquier estado, menos cancelado y finalizado
+Cancelar, visible si no está cancelado
+Cada botón pondrá el objeto en el estado correspondiente. -->
 
     <record id="view_form_helpdesk" model="ir.ui.view">
         <field name="name">view.helpdesk_ticket.form</field>
@@ -8,6 +17,12 @@
             <form string='Ticket'>
                 <header>
                     <field name="name" widget='statusbar'/>
+                    <button name="do_assign" type="object" string="Asignar" class="btn-primary" attrs="{'invisible': [('state', '!=', 'nuevo')]}" />
+                    <button name="proceso" type="object" string="En proceso" class="btn-primary" states="asignado" />
+                    <button name="pendiente" type="object" string="Pendiente" class="btn-primary" states="en_proceso, asignado" />
+                    <button name="finalizado" type="object" string="Finalizar" class="btn-primary" states="asignado, en_proceso, pendiente" />
+                    <button name="cancelado" type="object" string="Cancelar" class="btn-primary" attrs="{'invisible':[('state', '=', 'cancelado')]}"/>
+                    <!-- states para definir cuando se verá -->
                 </header>
                 <sheet>
                     <div class='oetitle'>
@@ -19,6 +34,7 @@
                         <group>
                             <field name="date" />
                             <field name="date_limit" />
+                            <field name="state" />
                         </group>
                         <group>
                             <field name="assigned" />

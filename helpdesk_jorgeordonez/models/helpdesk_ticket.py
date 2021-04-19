@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class HelpdeskTicket(models.Model):
@@ -25,3 +25,34 @@ class HelpdeskTicket(models.Model):
         string='Corrective Action', help='Describe corrective actions to do')
     action_preventive = fields.Html(
         string='Preventive Action', help='Describe preventive actions to do')
+
+    def do_assign(self):
+        self.ensure_one()
+        self.write({
+            'state': 'asignado',
+            'assigned': True
+        })
+        # for ticket in self:
+        #     ticket.state = 'asignado'
+        #     ticket.assigned = True
+
+    def proceso(self):
+        self.ensure_one()
+        self.state = 'en_proceso'
+
+    def pendiente(self):
+        self.ensure_one()
+        self.state = 'pendiente'
+
+    def finalizado(self):
+        self.ensure_one()
+        self.state = 'resuelto'
+
+    def cancelado(self):
+        self.ensure_one()
+        self.state = 'cancelado'
+    # @api.model
+    # def close_leads(self):
+    #     active_tickets = self.search[('active', '=', True)]
+    #     for ticket in active_tickets:
+    #         ticket.close()
