@@ -19,8 +19,8 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                     <field name="name" widget='statusbar'/>
                     <button name="do_assign" type="object" string="Asignar" class="btn-primary" attrs="{'invisible': [('state', '!=', 'nuevo')]}" />
                     <button name="proceso" type="object" string="En proceso" class="btn-primary" states="asignado" />
-                    <button name="pendiente" type="object" string="Pendiente" class="btn-primary" states="en_proceso, asignado" />
-                    <button name="finalizado" type="object" string="Finalizar" class="btn-primary" states="asignado, en_proceso, pendiente" />
+                    <button name="pendiente" type="object" string="Pendiente" class="btn-primary" states="en_proceso,asignado" />
+                    <button name="finalizado" type="object" string="Finalizar" class="btn-primary" states="nuevo,asignado,en_proceso,pendiente" />
                     <button name="cancelado" type="object" string="Cancelar" class="btn-primary" attrs="{'invisible':[('state', '=', 'cancelado')]}"/>
                     <!-- states para definir cuando se verá -->
                 </header>
