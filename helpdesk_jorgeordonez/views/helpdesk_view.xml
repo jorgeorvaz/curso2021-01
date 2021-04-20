@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-<!-- 
+    <!-- 
 Añadir en el header los siguiente botones:
 
 Asignar, cambia estado a asignado y pone a true el campo asignado, visible sólo con estado = nuevo
@@ -35,6 +35,7 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                             <field name="date" />
                             <field name="date_limit" />
                             <field name="state" />
+                            <field name="ticket_qty" />
                         </group>
                         <group>
                             <field name="assigned" />
@@ -44,6 +45,11 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                     <notebook>
                         <page string='Description'>
                             <field name='description'/>
+                            <group>
+                                <field name="tag_name"/>
+                                <button name="create_tag" type="object" string="Create tag" />
+                            </group>
+                            <field name='tag_ids'/>
                         </page>
                         <page string='Quality'>
                             <group string='Corrective Action'>
@@ -52,6 +58,10 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                             <group string='Preventive Action'>
                                 <field name='action_preventive' nolabel='1'/>
                             </group>
+                        </page>
+                        <page string='Actions'>
+                            <field name='action_ids'/>
+                            <field name='user_id'/>
                         </page>
                     </notebook>
                 </sheet>
