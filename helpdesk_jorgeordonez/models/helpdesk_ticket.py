@@ -38,6 +38,8 @@ class HelpdeskTicket(models.Model):
 
     time = fields.Float(string='Time')
 
+    color = fields.Integer('Color Index', default=10)
+
     assigned = fields.Boolean(
         string='Assigned', readonly=True, compute='_compute_assigned')
 
@@ -66,8 +68,9 @@ class HelpdeskTicket(models.Model):
 
     @api.depends('user_id')
     def _compute_ticket_qty(self):
-        self.ticket_qty = self.env['helpdesk.ticket'].search_count(
-            [('user_id', '=', self.user_id.id)])
+        for record in self:
+            record.ticket_qty = record.env['helpdesk.ticket'].search_count(
+                [('user_id', '=', record.user_id.id)])
 
     def do_assign(self):
         self.ensure_one()
