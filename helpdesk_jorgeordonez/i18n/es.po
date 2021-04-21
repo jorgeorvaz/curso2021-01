@@ -44,17 +44,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__action_corrective
 #: model_terms:ir.ui.view,arch_db:helpdesk_jorgeordonez.view_form_helpdesk
 msgid "Corrective Action"
-msgstr ""
+msgstr "Acción correctiva"
 
 #. module: helpdesk_jorgeordonez
 #: model_terms:ir.actions.act_window,help:helpdesk_jorgeordonez.helpdesk_ticket_action
 msgid "Create a new ticket"
-msgstr ""
+msgstr "Crear un ticket nuevo"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__create_date
@@ -64,12 +64,12 @@ msgstr ""
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__date
 msgid "Date"
-msgstr ""
+msgstr "Fecha"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__date_limit
 msgid "Date Limit"
-msgstr ""
+msgstr "Fecha límite"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,help:helpdesk_jorgeordonez.field_helpdesk_ticket__action_corrective
@@ -85,7 +85,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__description
 #: model_terms:ir.ui.view,arch_db:helpdesk_jorgeordonez.view_form_helpdesk
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__display_name
@@ -118,7 +118,7 @@ msgstr ""
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Modificado por última vez"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__write_uid
@@ -138,7 +138,7 @@ msgstr ""
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields,field_description:helpdesk_jorgeordonez.field_helpdesk_ticket__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: helpdesk_jorgeordonez
 #: model:ir.model.fields.selection,name:helpdesk_jorgeordonez.selection__helpdesk_ticket__state__nuevo

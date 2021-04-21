@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
 <odoo>
-    <!-- 
-Añadir en el header los siguiente botones:
-
-Asignar, cambia estado a asignado y pone a true el campo asignado, visible sólo con estado = nuevo
-En proceso, visible sólo con estado = asignado
-Pendiente, visible sólo con estado = en proceso o asignado
-Finalizar, visible en cualquier estado, menos cancelado y finalizado
-Cancelar, visible si no está cancelado
-Cada botón pondrá el objeto en el estado correspondiente. -->
 
     <record id="view_form_helpdesk" model="ir.ui.view">
         <field name="name">view.helpdesk_ticket.form</field>
@@ -60,8 +51,10 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                             </group>
                         </page>
                         <page string='Actions'>
-                            <field name='action_ids'/>
-                            <field name='user_id'/>
+                            <group>
+                                <field name='action_ids'/>
+                                <field name='user_id'/>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
@@ -77,8 +70,25 @@ Cada botón pondrá el objeto en el estado correspondiente. -->
                 <field name="name"/>
                 <field name="date"/>
                 <field name="state"/>
+                <field name="ticket_qty"/>
+                <field name="user_id" string='Assigned user'/>
             </tree>
         </field>
     </record>
+
+    <record id="view_helpdesk_ticket_action_form" model="ir.ui.view">
+        <field name="name">view.helpdesk_ticket_action.form</field>
+        <field name="model">helpdesk.ticket.action</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="ticket_id" attrs="{'readonly':True}" />
+                </group>
+            </form>
+        </field>
+    </record>
+
 
 </odoo>
